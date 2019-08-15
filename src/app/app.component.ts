@@ -11,18 +11,19 @@ export class AppComponent {
   status: Status = Status.NO_INPUT;
   error: String;
   results: Array<User>;
+  expandedIndex: Number = -1;
 
   constructor(private _dataService: DataService) {
   }
 
   async get_users(event: any) {
-    if(this.status == Status.LOADING) return;
+    if (this.status == Status.LOADING) return;
 
-    if(event.target.value == null || event.target.value.length<=0){
+    if (event.target.value == null || event.target.value.length <= 0) {
       this.status = Status.NO_INPUT;
       return;
     }
-    
+
     try {
       this.status = Status.LOADING;
       this.results = await this._dataService.get_users(event.target.value);
@@ -33,7 +34,15 @@ export class AppComponent {
       }
     } catch (error) {
       this.status = Status.ERROR;
-      this.error = error;
+      this.error = typeof(error) == "string" ? error : JSON.stringify(error);
+    }
+  }
+
+  toggle(index: number): void {
+    if (index == this.expandedIndex) {
+      this.expandedIndex = -1;
+    } else {
+      this.expandedIndex = index;
     }
   }
 
