@@ -39,7 +39,9 @@
         <img src="assets/searching.gif">
     </div>
     <div *ngSwitchCase="3" class="errors">
-        ERROR
+        <img src="assets/errors.jpg"><br>
+        <h4>Oops, Something went wrong</h4>
+        <h6>error: {{error}}</h6>
     </div>
     <div *ngSwitchCase="4" class="data-available">
         HASDATA

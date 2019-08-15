@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  status: Status = Status.LOADING;
+  status: Status = Status.ERROR;
   error: String;
 }
 
