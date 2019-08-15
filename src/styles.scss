@@ -17,6 +17,9 @@ body,
     width: 100vw;
     display: inline-block;
     vertical-align: middle;
+    img {
+        height: 150px;
+    }
     text-align: center;
 }
 
@@ -24,10 +27,21 @@ body,
     width: 100vw;
     display: inline-block;
     vertical-align: middle;
+    img {
+        height: 150px;
+    }
     text-align: center;
 }
 
-.loading {}
+.loading {
+    width: 100vw;
+    display: inline-block;
+    vertical-align: middle;
+    img {
+        height: 150px;
+    }
+    text-align: center;
+}
 
 .errors {}
 

@@ -28,15 +28,15 @@
 
 <div [ngSwitch]="status" class="results">
     <div *ngSwitchCase="0" class="no-inputs">
-        <img src="assets/search-person.jpg" height="150px"><br>
+        <img src="assets/search-person.jpg"><br>
         <h6>Start typing name of person to search his/her profile on github...</h6>
     </div>
     <div *ngSwitchCase="1" class="no-results">
-        <img src="assets/no-results.jpg" height="150px"><br>
+        <img src="assets/no-results.jpg"><br>
         <h6>We're sorry what you were looking for. Please try another way</h6>
     </div>
     <div *ngSwitchCase="2" class="loading">
-        LOADING
+        <img src="assets/searching.gif">
     </div>
     <div *ngSwitchCase="3" class="errors">
         ERROR
