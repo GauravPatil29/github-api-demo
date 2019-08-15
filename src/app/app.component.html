@@ -2,48 +2,48 @@
     <div class="navbar-header d-flex col">
         <a class="navbar-brand" href="#">GithubApiDemo</a>
         <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle navbar-toggler ml-auto">
-      <span class="navbar-toggler-icon"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </button>
+            <span class="navbar-toggler-icon"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
     </div>
 
     <div id="navbarCollapse" class="collapse navbar-collapse justify-content-start">
         <ul class="nav navbar-nav">
             <li class="nav-item nav-option">
                 <select name="sort" class="form-control">
-          <option value="Sort By Name(A - Z)">Sort By Name(A - Z)</option>
-          <option value="Sort By Name(Z - A)">Sort By Name(Z - A)</option>
-          <option value="Rank ASC">Rank ASC</option>
-          <option value="Rank DSC">Rank DSC</option>
-        </select>
+                    <option value="Sort By Name(A - Z)">Sort By Name(A - Z)</option>
+                    <option value="Sort By Name(Z - A)">Sort By Name(Z - A)</option>
+                    <option value="Rank ASC">Rank ASC</option>
+                    <option value="Rank DSC">Rank DSC</option>
+                </select>
             </li>
             <li class="nav-item nav-option">
-                <input type="text" id="search" class="form-control" placeholder="Search here...">
+                <input type="text" id="search" class="form-control" placeholder="Search here..." (keyup)="get_users($event)">
             </li>
         </ul>
     </div>
 </nav>
 
-<div [ngSwitch]="status" class="results">
-    <div *ngSwitchCase="0" class="no-inputs">
-        <img src="assets/search-person.jpg"><br>
+<div [ngSwitch]=" status " class="status ">
+    <div *ngSwitchCase="0 " class="no-inputs ">
+        <img src="assets/search-person.jpg "><br>
         <h6>Start typing name of person to search his/her profile on github...</h6>
     </div>
-    <div *ngSwitchCase="1" class="no-results">
-        <img src="assets/no-results.jpg"><br>
+    <div *ngSwitchCase="1 " class="no-results ">
+        <img src="assets/no-results.jpg "><br>
         <h6>We're sorry what you were looking for. Please try another way</h6>
     </div>
-    <div *ngSwitchCase="2" class="loading">
-        <img src="assets/searching.gif">
+    <div *ngSwitchCase="2 " class="loading ">
+        <img src="assets/searching.gif ">
     </div>
-    <div *ngSwitchCase="3" class="errors">
-        <img src="assets/errors.jpg"><br>
+    <div *ngSwitchCase="3 " class="errors ">
+        <img src="assets/errors.jpg "><br>
         <h4>Oops, Something went wrong</h4>
         <h6>error: {{error}}</h6>
     </div>
-    <div *ngSwitchCase="4" class="data-available">
-        HASDATA
+    <div *ngSwitchCase="4 " class="data-available ">
+        Total results: {{results.length}}
     </div>
 </div>

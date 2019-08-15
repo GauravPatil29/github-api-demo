@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { User } from './results';
+import { DataService } from './data.service';
 
 @Component({
   selector: 'app-root',
@@ -6,8 +8,35 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  status: Status = Status.ERROR;
+  status: Status = Status.NO_INPUT;
   error: String;
+  results: Array<User>;
+
+  constructor(private _dataService: DataService) {
+  }
+
+  async get_users(event: any) {
+    if(this.status == Status.LOADING) return;
+
+    if(event.target.value == null || event.target.value.length<=0){
+      this.status = Status.NO_INPUT;
+      return;
+    }
+    
+    try {
+      this.status = Status.LOADING;
+      this.results = await this._dataService.get_users(event.target.value);
+      if (this.results.length <= 0) {
+        this.status = Status.NO_RESULTS;
+      } else {
+        this.status = Status.HASDATA;
+      }
+    } catch (error) {
+      this.status = Status.ERROR;
+      this.error = error;
+    }
+  }
+
 }
 
 enum Status {
