@@ -1,0 +1,16 @@
+.nav-option {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+@media (max-width: 576px) {
+    .nav-option {
+        margin: 10px 0px;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-option {
+        margin: 10px 0px;
+    }
+}
