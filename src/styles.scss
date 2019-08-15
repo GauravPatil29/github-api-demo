@@ -20,7 +20,12 @@ body,
     text-align: center;
 }
 
-.no-results {}
+.no-results {
+    width: 100vw;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+}
 
 .loading {}
 

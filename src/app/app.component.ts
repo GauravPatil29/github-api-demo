@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  status: Status = Status.NO_INPUT;
+  status: Status = Status.NO_RESULTS;
   error: String;
 }
 
