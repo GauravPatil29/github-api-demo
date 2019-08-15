@@ -6,5 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'github-api-demo';
+  status: Status = Status.NO_INPUT;
+  error: String;
+}
+
+enum Status {
+  NO_INPUT = 0,
+  NO_RESULTS = 1,
+  LOADING = 2,
+  ERROR = 3,
+  HASDATA = 4
 }

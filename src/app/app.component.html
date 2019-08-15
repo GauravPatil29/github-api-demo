@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default navbar-expand-lg navbar-dark bg-primary">
+<nav class="navbar navbar-default navbar-fixed navbar-expand-lg navbar-dark bg-primary">
     <div class="navbar-header d-flex col">
         <a class="navbar-brand" href="#">GithubApiDemo</a>
         <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle navbar-toggler ml-auto">
@@ -25,3 +25,22 @@
         </ul>
     </div>
 </nav>
+
+<div [ngSwitch]="status" class="results">
+    <div *ngSwitchCase="0" class="no-inputs">
+        <img src="assets/search-person.jpg" height="150px"><br>
+        <h6>Start typing name of person to search his/her profile on github...</h6>
+    </div>
+    <div *ngSwitchCase="1" class="no-results">
+        NO_RESULTS
+    </div>
+    <div *ngSwitchCase="2" class="loading">
+        LOADING
+    </div>
+    <div *ngSwitchCase="3" class="errors">
+        ERROR
+    </div>
+    <div *ngSwitchCase="4" class="data-available">
+        HASDATA
+    </div>
+</div>
