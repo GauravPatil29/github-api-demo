@@ -6,14 +6,9 @@ This sample shows how to create an angular 2 app that:
 * How to create **Interfaces** in angular.
 * Searching and Sorting **Users**.
 
-## Development server
+# Demo
 
-git clone https://github.com/GauravPatil29/github-api-demo.git
-github-api-demo
-
-See demo****
-
-* [Demo URL - https://githubapi-demo.firebaseapp.com/](https://githubapi-demo.firebaseapp.com/)
+* [URL - https://githubapi-demo.firebaseapp.com/](https://githubapi-demo.firebaseapp.com/)
 
 ## Running it
 
