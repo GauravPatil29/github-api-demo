@@ -13,13 +13,13 @@ github-api-demo
 
 See demo****
 
-* [Demo URL](https://githubapi-demo.firebaseapp.com/)
+* [Demo URL - https://githubapi-demo.firebaseapp.com/](https://githubapi-demo.firebaseapp.com/)
 
 ## Running it
 
 Clone this repository (https://github.com/GauravPatil29/github-api-demo) for this example.
 
-run `npm install` on this project and run `npm serve` to start the app. Then just navigate to [http://localhost:3000](http://localhost:3000) :boom:
+run `npm install` on this project and run `npm serve` to start the app. Then just navigate to [http://localhost:4200](http://localhost:3000) :boom:
 
 ## Issue Reporting
 
@@ -27,7 +27,7 @@ If you have found a bug or if you have a feature request, please report them at 
 
 ## Author
 
-[Auth0](https://github.com/GauravPatil29)
+[Gaurav Patil](https://github.com/GauravPatil29)
 
 ## License
 
