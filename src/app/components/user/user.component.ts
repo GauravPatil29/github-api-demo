@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Status, DataService } from '../../providers/data.service';
 import { User } from 'src/app/interfaces/user';
+import { Repo } from 'src/app/interfaces/repo';
 
 @Component({
   selector: 'app-user',
@@ -16,7 +17,7 @@ export class UserComponent implements OnInit {
 
   status: Status = Status.LOADING;
   error: string;
-  repos: Array<any> = [];
+  repos: Array<Repo> = [];
 
   constructor(
     private _dataService: DataService
