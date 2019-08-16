@@ -46,7 +46,8 @@
         </div>
         <div *ngSwitchCase="4 " class="data-available ">
             Total results: {{results.length}}
-            <app-user *ngFor="let user of results;" [user]="user"></app-user>
+            <app-user *ngFor="let user of results | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize" [user]="user"></app-user>
+            <app-pagination [items]="results.length" [initial]="1" [pageSize]="pageSize" (onchange)="page = $event"></app-pagination>
         </div>
     </div>
 </div>

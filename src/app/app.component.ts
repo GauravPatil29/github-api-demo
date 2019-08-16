@@ -13,6 +13,9 @@ export class AppComponent {
   error: string;
   results: Array<User>;
   sort_by: string = "az";
+  
+  pageSize: number = 4;
+  page: number = 1;
 
   constructor(private _dataService: DataService) {
   }
