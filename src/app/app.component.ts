@@ -8,13 +8,13 @@ import { DataService, Status } from './data.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+
   status: Status = Status.NO_INPUT;
-  error: String;
+  error: string;
   results: Array<User>;
-  expandedIndex: Number = -1;
+  sort_by: string = "az";
 
   constructor(private _dataService: DataService) {
-    this.get_users({ target: { value: "gaurav" } });
   }
 
   async get_users(event: any) {
@@ -31,6 +31,7 @@ export class AppComponent {
       if (this.results.length <= 0) {
         this.status = Status.NO_RESULTS;
       } else {
+        this.sort_users();
         this.status = Status.HASDATA;
       }
     } catch (error) {
@@ -39,12 +40,26 @@ export class AppComponent {
     }
   }
 
-  toggle(index: number): void {
-    if (index == this.expandedIndex) {
-      this.expandedIndex = -1;
-    } else {
-      this.expandedIndex = index;
-    }
+  public sort_users(): void {
+    if (this.results == null || this.results.length <= 0) return;
+    this.results = this.results.sort((a: User, b: User) => {
+      let diff = 0;
+      switch (this.sort_by) {
+        case "az":
+          diff = a.login.localeCompare(b.login);
+          break;
+        case "za":
+          diff = b.login.localeCompare(a.login);
+          break;
+        case "rankasc":
+          diff = a.score - b.score;
+          break;
+        case "rankdsc":
+          diff = b.score - a.score;
+          break;
+      }
+      return diff;
+    });
   }
 
 }
