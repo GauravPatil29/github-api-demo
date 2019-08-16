@@ -1,27 +1,27 @@
 export interface Results {
-    total_count: Number;
-    incomplete_results: Boolean;
+    total_count: number;
+    incomplete_results: boolean;
     items: Array<User>;
 }
 
 export interface User {
-    login: String;
-    id: Number;
-    node_id: String;
-    avatar_url: String;
-    gravatar_id: String;
-    url: String;
-    html_url: String;
-    followers_url: String;
-    following_url: String;
-    gists_url: String;
-    starred_url: String;
-    subscriptions_url: String;
-    organizations_url: String;
-    repos_url: String;
-    events_url: String;
-    received_events_url: String;
-    type: String;
-    site_admin: Boolean;
-    score: Number;
+    login: string;
+    id: number;
+    node_id: string;
+    avatar_url: string;
+    gravatar_id: string;
+    url: string;
+    html_url: string;
+    followers_url: string;
+    following_url: string;
+    gists_url: string;
+    starred_url: string;
+    subscriptions_url: string;
+    organizations_url: string;
+    repos_url: string;
+    events_url: string;
+    received_events_url: string;
+    type: string;
+    site_admin: boolean;
+    score: number;
 }

@@ -24,4 +24,24 @@ export class DataService {
       });
     });
   }
+
+  public fetch_repos(_input: string): Promise<Array<any>> {
+    return new Promise<Array<any>>((_resolve, _reject) => {
+      this._http.get(this._baseUrl + "/users/" + _input+"/repos"  , {
+        responseType: "json"
+      }).subscribe((results: any) => {
+        _resolve(results);
+      }, (errors) => {
+        _reject(errors);
+      });
+    });
+  }
+}
+
+export enum Status {
+  NO_INPUT = 0,
+  NO_RESULTS = 1,
+  LOADING = 2,
+  ERROR = 3,
+  HASDATA = 4
 }

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { User } from './results';
-import { DataService } from './data.service';
+import { DataService, Status } from './data.service';
 
 @Component({
   selector: 'app-root',
@@ -14,6 +14,7 @@ export class AppComponent {
   expandedIndex: Number = -1;
 
   constructor(private _dataService: DataService) {
+    this.get_users({ target: { value: "gaurav" } });
   }
 
   async get_users(event: any) {
@@ -34,7 +35,7 @@ export class AppComponent {
       }
     } catch (error) {
       this.status = Status.ERROR;
-      this.error = typeof(error) == "string" ? error : JSON.stringify(error);
+      this.error = typeof (error) == "string" ? error : JSON.stringify(error);
     }
   }
 
@@ -46,12 +47,4 @@ export class AppComponent {
     }
   }
 
-}
-
-enum Status {
-  NO_INPUT = 0,
-  NO_RESULTS = 1,
-  LOADING = 2,
-  ERROR = 3,
-  HASDATA = 4
 }

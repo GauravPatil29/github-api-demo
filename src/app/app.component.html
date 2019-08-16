@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default navbar-fixed navbar-expand-lg navbar-dark bg-primary">
+<nav class="navbar navbar-default navbar-fixed-top navbar-expand-lg navbar-dark bg-primary">
     <div class="navbar-header d-flex col">
         <a class="navbar-brand" href="#">GithubApiDemo</a>
         <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle navbar-toggler ml-auto">
@@ -26,26 +26,27 @@
     </div>
 </nav>
 
-<div [ngSwitch]=" status " class="status ">
-    <div *ngSwitchCase="0 " class="no-inputs ">
-        <img src="assets/search-person.jpg "><br>
-        <h6>Start typing name of person to search his/her profile on github...</h6>
-    </div>
-    <div *ngSwitchCase="1 " class="no-results ">
-        <img src="assets/no-results.jpg "><br>
-        <h6>We're sorry what you were looking for. Please try another way</h6>
-    </div>
-    <div *ngSwitchCase="2 " class="loading ">
-        <img src="assets/searching.gif ">
-    </div>
-    <div *ngSwitchCase="3 " class="errors ">
-        <img src="assets/errors.jpg "><br>
-        <h4>Oops, Something went wrong</h4>
-        <h6>error: {{error}}</h6>
-    </div>
-    <div *ngSwitchCase="4 " class="data-available ">
-        Total results: {{results.length}}
-
-        <app-user *ngFor="let user of results;let i = index" [user]="user" [expanded]="i == expandedIndex" (onclick)="toggle(i)"></app-user>
+<div class="container-fluid">
+    <div [ngSwitch]=" status " class="status ">
+        <div *ngSwitchCase="0 " class="no-inputs ">
+            <img src="assets/search-person.jpg "><br>
+            <h6>Start typing name of person to search his/her profile on github...</h6>
+        </div>
+        <div *ngSwitchCase="1 " class="no-results ">
+            <img src="assets/no-results.jpg "><br>
+            <h6>We're sorry what you were looking for. Please try another way</h6>
+        </div>
+        <div *ngSwitchCase="2 " class="loading ">
+            <img src="assets/searching.gif ">
+        </div>
+        <div *ngSwitchCase="3 " class="errors ">
+            <img src="assets/errors.jpg "><br>
+            <h4>Oops, Something went wrong</h4>
+            <h6>error: {{error}}</h6>
+        </div>
+        <div *ngSwitchCase="4 " class="data-available ">
+            Total results: {{results.length}}
+            <app-user *ngFor="let user of results;let i = index" [user]="user"></app-user>
+        </div>
     </div>
 </div>

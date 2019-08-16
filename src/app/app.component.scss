@@ -1,3 +1,11 @@
+.navbar-fixed-top {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    z-index: 100;
+}
+
 .nav-option {
     margin-left: 10px;
     margin-right: 10px;
@@ -19,6 +27,7 @@
     position: relative;
     height: calc(100vh - 57px);
     line-height: calc(100vh - 57px);
+    margin-top: 57px;
 }
 
 .status * {

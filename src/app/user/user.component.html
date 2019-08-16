@@ -1,1 +1,51 @@
-<p (click)="toggle()">{{user.login}} : {{expanded}}</p>
+<div class="user-container card">
+    <div class="row">
+        <div class="col-xs-4 col-sm-2 col-md-1 col-lg-1">
+            <img class="img-circle" [src]="user.avatar_url" alt="User Pic">
+        </div>
+        <div class="col-xs-8 col-sm-10 col-md-11 col-lg-11">
+            <strong>{{user.login}}</strong><br>
+            <span>Profile Url: {{user.url}}</span>
+            <div class="row details-row">
+                <div class="col-9">
+                    <div [ngSwitch]="status" class="status">
+                        <div *ngSwitchCase="1" class="no-results">
+                            <b>We're sorry what you were looking for. Please try another way</b>
+                        </div>
+                        <div *ngSwitchCase="2" class="loading">
+                            <!-- <img src="assets/searching.gif "> -->
+                            <span class="text-muted">Loading...</span>
+                        </div>
+                        <div *ngSwitchCase="3" class="errors">
+                            <img src="assets/errors.jpg "> &nbsp;
+                            <b>Oops, Something went wrong</b><br>
+                            <span style="color: red">error: {{error}}</span>
+                        </div>
+                        <div *ngSwitchCase="4" class="data-available">
+                            Total repository: {{repos.length}}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3 text-right" *ngIf="status == 4">
+                    <a [href]="'#repos_'+user.login" class="btn btn-outline-primary btn-sm collapsed" data-toggle="collapse"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div [id]="'repos_'+user.login" class="repos collapse">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Language</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let repo of repos">
+                    <td>{{repo.name}}</td>
+                    <td>{{repo.language}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
