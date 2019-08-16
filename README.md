@@ -6,7 +6,7 @@ This sample shows how to create an angular 2 app that:
 * How to create **Interfaces** in angular.
 * Searching and Sorting **Users**.
 
-# Demo
+## Demo
 
 * [URL - https://githubapi-demo.firebaseapp.com/](https://githubapi-demo.firebaseapp.com/)
 
@@ -14,7 +14,7 @@ This sample shows how to create an angular 2 app that:
 
 Clone this repository (https://github.com/GauravPatil29/github-api-demo) for this example.
 
-run `npm install` on this project and run `npm serve` to start the app. Then just navigate to [http://localhost:4200](http://localhost:3000) :boom:
+run `npm install` on this project and run `npm serve` to start the app. Then just navigate to [http://localhost:4200](http://localhost:4200) :boom:
 
 ## Issue Reporting
 
