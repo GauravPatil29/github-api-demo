@@ -1,9 +1,3 @@
-export interface Results {
-    total_count: number;
-    incomplete_results: boolean;
-    items: Array<User>;
-}
-
 export interface User {
     login: string;
     id: number;

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Results, User } from './results';
+import { User } from '../interfaces/user';
+import { Results } from '../interfaces/results';
 
 @Injectable({
   providedIn: 'root'
@@ -27,7 +28,7 @@ export class DataService {
 
   public fetch_repos(_input: string): Promise<Array<any>> {
     return new Promise<Array<any>>((_resolve, _reject) => {
-      this._http.get(this._baseUrl + "/users/" + _input+"/repos"  , {
+      this._http.get(this._baseUrl + "/users/" + _input + "/repos", {
         responseType: "json"
       }).subscribe((results: any) => {
         _resolve(results);

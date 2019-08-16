@@ -1,13 +1,13 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { User } from '../results';
-import { Status, DataService } from '../data.service';
+import { Status, DataService } from '../../providers/data.service';
+import { User } from 'src/app/interfaces/user';
 
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
   styleUrls: ['./user.component.scss']
 })
-export class UserComponent implements OnInit{
+export class UserComponent implements OnInit {
   ngOnInit(): void {
     this.fetch_repos();
   }

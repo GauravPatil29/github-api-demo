@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { User } from './results';
-import { DataService, Status } from './data.service';
+import { DataService, Status } from './providers/data.service';
+import { User } from './interfaces/user';
 
 @Component({
   selector: 'app-root',

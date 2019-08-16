@@ -1,27 +1,34 @@
-# GithubApiDemo
+# Angular: GithubApiDemo
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.1.
+This sample shows how to create an angular 2 app that:
+* How to create **Providers** in angular and inject them into components
+* **Calls APIs** unauthenticated to github REST API's.
+* How to create **Interfaces** in angular.
+* Searching and Sorting **Users**.
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+git clone https://github.com/GauravPatil29/github-api-demo.git
+github-api-demo
 
-## Code scaffolding
+See demo****
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+* [Demo URL](https://githubapi-demo.firebaseapp.com/)
 
-## Build
+## Running it
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Clone this repository (https://github.com/GauravPatil29/github-api-demo) for this example.
 
-## Running unit tests
+run `npm install` on this project and run `npm serve` to start the app. Then just navigate to [http://localhost:3000](http://localhost:3000) :boom:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Issue Reporting
 
-## Running end-to-end tests
+If you have found a bug or if you have a feature request, please report them at this repository issues section. Please do not report security vulnerabilities on the public GitHub issue tracker. You can write a mail to [Gaurav Patil](mailto:gauravpatil2994@gmail.com?subject=Issues)
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+## Author
 
-## Further help
+[Auth0](https://github.com/GauravPatil29)
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## License
+
+This project is licensed under the MIT license. See the [LICENSE](LICENSE) file for more info.
