@@ -37,9 +37,9 @@ jobs:
         run: |
           npm run clean
 
-      # - name: Perform unit testing
-      #   run: |
-      #     npm run test
+      - name: Perform unit testing
+        run: |
+          npm run test
 
       - name: Generate build
         run: |
