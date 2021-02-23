@@ -39,7 +39,7 @@ export class AppComponent {
       }
     } catch (error) {
       this.status = Status.ERROR;
-      this.error = typeof (error) == "string" ? error : JSON.stringify(error);
+      this.error = error;
     }
   }
 

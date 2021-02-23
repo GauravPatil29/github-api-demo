@@ -1,6 +1,6 @@
 import { HttpClientModule } from '@angular/common/http';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { DataService } from 'src/app/providers/data.service';
+import { DataService, Status } from 'src/app/providers/data.service';
 
 import { UserComponent } from './user.component';
 
@@ -25,31 +25,48 @@ describe('UserComponent', () => {
         fixture = TestBed.createComponent(UserComponent);
         component = fixture.componentInstance;
         component.user = {
-            "avatar_url": "https://avatars.githubusercontent.com/u/7189784?v=4",
-            "events_url": "https://api.github.com/users/71/events",
-            "followers_url": "https://api.github.com/users/71/followers",
-            "following_url": "https://api.github.com/users/71/following",
-            "gists_url": "https://api.github.com/users/71/gists{/gist_id}",
+            "login": "GauravPatil29",
+            "id": 35704153,
+            "node_id": "MDQ6VXNlcjM1NzA0MTUz",
+            "avatar_url": "https://avatars.githubusercontent.com/u/35704153?v=4",
             "gravatar_id": "",
-            "html_url": "https://github.com/71",
-            "id": 7189784,
-            "login": "71",
-            "node_id": "MDQ6VXNlcjcxODk3ODQ=",
-            "organizations_url": "https://api.github.com/users/71/orgs",
-            "received_events_url": "https://api.github.com/users/71/received_events",
-            "repos_url": "https://api.github.com/users/71/repos",
-            "score": 1,
-            "site_admin": false,
-            "starred_url": "https://api.github.com/users/71/starred",
-            "subscriptions_url": "https://api.github.com/users/71/subscriptions",
+            "url": "https://api.github.com/users/GauravPatil29",
+            "html_url": "https://github.com/GauravPatil29",
+            "followers_url": "https://api.github.com/users/GauravPatil29/followers",
+            "following_url": "https://api.github.com/users/GauravPatil29/following{/other_user}",
+            "gists_url": "https://api.github.com/users/GauravPatil29/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/GauravPatil29/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/GauravPatil29/subscriptions",
+            "organizations_url": "https://api.github.com/users/GauravPatil29/orgs",
+            "repos_url": "https://api.github.com/users/GauravPatil29/repos",
+            "events_url": "https://api.github.com/users/GauravPatil29/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/GauravPatil29/received_events",
             "type": "User",
-            "url": "https://api.github.com/users/71"
+            "site_admin": false,
+            "score": 1.0
         };
 
         fixture.detectChanges();
     });
 
-    it('should create', () => {
+    it('UserComponent should be created', () => {
         expect(component).toBeTruthy();
+    });
+
+    it('UserComponent.fetch_repos should return results', async () => {
+        await component.fetch_repos();
+        expect(component.status).toEqual(Status.HASDATA);
+    });
+
+    it('UserComponent.fetch_repos should return empty results', async () => {
+        component.user.login = "gauravpatil2994";
+        await component.fetch_repos();
+        expect(component.status).toEqual(Status.NO_RESULTS);
+    });
+
+    it('UserComponent.fetch_repos should return errors', async () => {
+        component.user.login = "";
+        await component.fetch_repos();
+        expect(component.status).toEqual(Status.ERROR);
     });
 });
