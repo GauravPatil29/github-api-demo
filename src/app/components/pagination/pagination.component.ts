@@ -18,7 +18,7 @@ export class PaginationComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.pages_count = parseInt((this.items / 4).toFixed(0)) + (this.items % 4 == 0 ? 0 : 1);
+    this.pages_count = Math.floor(this.items / 4) + (this.items % 4 == 0 ? 0 : 1);
     this.pages = [];
     for (var index = 1; index <= this.pages_count; index++) {
       this.pages.push(index);

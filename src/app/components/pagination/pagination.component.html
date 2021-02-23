@@ -1,7 +1,6 @@
 <nav>
     <ul class="pagination">
-        <li class="page-item"><a class="page-link" (click)="change_page(1)">First</a></li>
-        <li *ngFor="let page of pages" [class]="active == page ? 'page-item active': 'page-item'"><a class="page-link" (click)="change_page(page)">{{page}}</a></li>
-        <li class="page-item"><a class="page-link" (click)="change_page(pages_count-1)">Last</a></li>
+        <li *ngFor="let page of pages" [class]="active == page ? 'page-item active': 'page-item'"><a class="page-link"
+                (click)="change_page(page)">{{ page == 1 ? "First" : page == pages_count ? "Last" : page }}</a></li>
     </ul>
 </nav>
