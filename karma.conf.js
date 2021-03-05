@@ -17,7 +17,7 @@ module.exports = function (config) {
     },
     reporters: ['progress', 'kjhtml'],
     coverageReporter: {
-      dir: '',
+      dir: 'dist',
       reporters: [{ type: 'html', subdir: 'coverage' }],
       fixWebpackSourcePaths: true,
       instrumenterOptions: {

@@ -43,7 +43,7 @@ jobs:
 
       - name: Generate build
         run: |
-          npm run build:prod
+          npm run build
 
       - name: Firebase deploy
         uses: w9jds/firebase-action@master
