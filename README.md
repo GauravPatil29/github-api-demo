@@ -1,6 +1,6 @@
 # Angular: GithubApiDemo
 
-This sample shows how to create an angular 2 app that:
+This sample shows how to create an angular 21 app that:
 * How to create **Providers** in angular and inject them into components
 * **Calls APIs** unauthenticated to github REST API's.
 * How to create **Interfaces** in angular.
