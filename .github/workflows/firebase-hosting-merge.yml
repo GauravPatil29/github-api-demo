@@ -46,7 +46,7 @@ jobs:
 
       - name: Generate build
         run: |
-          npm run build
+          npm run build:prod
 
       - name: Firebase deploy for production
         uses: FirebaseExtended/action-hosting-deploy@v0
