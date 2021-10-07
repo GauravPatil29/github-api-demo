@@ -46,13 +46,13 @@ jobs:
 
       - name: Generate build
         run: |
-          npm run build
+          npm run build:prod
 
       - name: Firebase deploy for production
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
-          firebaseServiceAccount: '${{ secrets.FIREBASE_TOKEN }}'
+          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_GITHUBAPI_DEMO }}'
           channelId: live
           projectId: githubapi-demo
         env:
