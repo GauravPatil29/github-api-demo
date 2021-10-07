@@ -48,12 +48,15 @@ jobs:
         run: |
           npm run build
 
-      - name: Firebase deploy
-        uses: w9jds/firebase-action@master
+      - name: Firebase deploy for production
+        uses: FirebaseExtended/action-hosting-deploy@v0
         with:
-          args: deploy --only hosting
+          repoToken: '${{ secrets.GITHUB_TOKEN }}'
+          firebaseServiceAccount: '${{ secrets.FIREBASE_TOKEN }}'
+          channelId: live
+          projectId: githubapi-demo
         env:
-          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+          FIREBASE_CLI_PREVIEWS: hostingchannels
       
       - name: Read package version
         uses: tyankatsu0105/read-package-version-actions@v1
