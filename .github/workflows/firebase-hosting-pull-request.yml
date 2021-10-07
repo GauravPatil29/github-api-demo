@@ -4,9 +4,9 @@
 name: Firebase Preview Deployment
 
 on:
-  push:
+  pull_request:
     branches:
-    - master
+      - master
 
 jobs:
   build_and_preview:
