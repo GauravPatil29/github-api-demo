@@ -16,7 +16,7 @@ jobs:
         node-version: [12.x]
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@master
 
       - name: Cache node modules
         uses: actions/cache@v1
@@ -45,7 +45,12 @@ jobs:
       - name: Generate build
         run: |
           npm run build:prod
-          
+
+      - name: Change node version
+        uses: actions/setup-node@master
+        with: 
+          node-version: [18.x]
+
       - name: Firebase deploy for preview
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
