@@ -46,14 +46,14 @@ jobs:
       - name: Generate build
         run: |
           npm run build:prod
-          
+
       - name: Firebase deploy for preview
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_GITHUBAPI_DEMO }}'
-          channelId: qa
           projectId: githubapi-demo
-          expires: 1d
+          expires: 5d
+          firebaseToolsVersion: 10.0.0
         env:
           FIREBASE_CLI_PREVIEWS: hostingchannels
