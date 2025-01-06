@@ -54,6 +54,6 @@ jobs:
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_GITHUBAPI_DEMO }}'
           projectId: githubapi-demo
           expires: 5d
-          firebaseToolsVersion: 11.0.0
+          firebaseToolsVersion: 10.0.0
         env:
           FIREBASE_CLI_PREVIEWS: hostingchannels
