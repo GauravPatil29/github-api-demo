@@ -46,9 +46,9 @@ jobs:
         run: |
           npm run build:prod
 
-      - name: Change node version
+      - name: Node [18.x]
         uses: actions/setup-node@master
-        with: 
+        with:
           node-version: [18.x]
 
       - name: Firebase deploy for preview
